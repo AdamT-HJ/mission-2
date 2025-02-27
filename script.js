@@ -46,6 +46,13 @@ const oreoButt6 = document.getElementById("oreoButt6")
 
 const allButtArray = [userButt1, userButt2, userButt3, userButt4, userButt5, userButt6, oreoButt1, oreoButt2, oreoButt3, oreoButt4, oreoButt5, oreoButt6]
 
+//variable for both roll al dice buttons
+const bothRollAllDiceButtons = [userButtAll, oreoButtAll];
+//User & Oreo Counters
+let userCount = document.getElementById("userCount")
+let oreoCount = document.getElementById("oreoCount")
+
+
 
 
 //Functions
@@ -88,6 +95,7 @@ oreoButtAll.addEventListener("click", function () {
 });
 
 //for roll individual dice buttons this rolls all dice 
+//This listens for any individual dice button to be pressed using an array, then the button that was then with a loop checks which button was the target by matching it with an array of the buttons. Once it knows, it changes the die that corresponds to the button with the same [i] value using the display dice 'roll' function. It does this with a loop, it works because the button array and dice array match index 0, is button 1 and dice 1 in each array.
 anyIndividualDiceButton.forEach((item) => {
     item.addEventListener("click", function (event) {
     for (let i = 0; i <= 11; i++) {
@@ -97,12 +105,16 @@ anyIndividualDiceButton.forEach((item) => {
 })
 });
 
-//for roll individual dice buttons this rolls all dice 
-// anyIndividualDiceButton.forEach((item) => {
-//     item.addEventListener("click", function anyDice (event) {
-//     for (let i = 0; i <= 11; i++) {
-//         if (event.target = allButtArray[i]) {
-//         allDiceArray[i].textContent = displayDice();};       
-//     }; 
-// })
-// });
+console.log(parseInt(oreoCount.textContent) +=1);
+
+
+//the replace str with value part of this isnt working try figuring it out with clg above
+//Counters
+bothRollAllDiceButtons.forEach((item => {
+    item.addEventListener("click", function (event) {
+        if (event.target === userButtAll) {
+            userCount.textContent = (parseInt(userCount.textContent))+=6
+        } else {oreoCount.textContent = (parseInt(oreoCount.textContent)) += 6} 
+    })
+}));
+
