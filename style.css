@@ -38,6 +38,16 @@ header {
        width: 30%; 
     }
 
+/* flexbox for both roll counters & all roll dice buttons */
+#allRollPrompt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2rem 1rem 2rem 1rem;
+    width: 98%;
+}
+
+
 #userRollPrompt, #oreoRollPrompt {
     margin: 2rem 1rem 2rem 1rem;
     display: flex;
@@ -45,6 +55,15 @@ header {
     align-items: flex-start;
 }
 
+/* flexbox to hold both dice boxes */
+#bothDiceBoxes {
+    display: flex;
+    flex-direction: row;
+    margin: 2rem 1rem 2rem 1rem;
+    width: 98%;
+}
+
+/* User and Oreos Dice box grids */
 #userdbox, #oreodbox {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -52,36 +71,68 @@ header {
     column-gap: 10px;
     row-gap: 10px;
     margin: 2rem 1rem 2rem 1rem;
+    width: 48vw;
 }
 
-    .ubox, .obox {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+.ubox, .obox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    /* style for oreos dice */
-    .oreod {
-        background-image: url(/images/oreo-dice-background.png);
-        height: 150px;
-        width: 200px;
-    }
+/* style for user dice */
+.userd {
+    border-radius: 40px 40px 40px 40px;
+    -moz-border-radius: 40px 40px 40px 40px;
+    -webkit-border-radius: 40px 40px 40px 40px;
+    background-color: #46a365;
+    border: 3px solid #6ac687;
+    height: 130px;
+    width: 140px;
+    font-size: 7rem;
+    text-align: center;
+    color: rgb(240, 242, 255);
+    font-family: 'Times New Roman', Times, serif;
+   
+}
+
+/* style for oreos dice */
+.oreod {
+    background-image: url(/images/oreo-dice-background.png);
+    height: 130px;
+    width: 140px;
+    border-radius: 40px 40px 40px 40px;
+    -moz-border-radius: 40px 40px 40px 40px;
+    -webkit-border-radius: 40px 40px 40px 40px;
+    font-size: 6.5rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: "Kranky", serif;
+}
 
 
 
-#userCounter, #oreoCounter {
+
+/* Style for user dice buttons */
+.userButt {
+
+}
+
+
+
+#commsBox {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     width: 98%;
     max-height: 500px;
     background-color: aqua;
     margin: 2rem 1rem 2rem 1rem;
 }   
 
-    #userCounterImage, #oreoCounterImage {
-        object-fit: contain;
-        width: 30%; 
-    }
+#userCounterImage, #oreoCounterImage {
+    object-fit: contain;
+    width: 30%; 
+}
 
-    
+

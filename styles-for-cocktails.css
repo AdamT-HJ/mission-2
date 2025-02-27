@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+header {
+    /* color: rgba(169, 86, 26, 0.694); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Roboto;
+    font-size: 8rem;
+    font-weight: bold;
+    color: transparent;
+    letter-spacing: -3px;
+    background-image: url(images/dunedin.jpg);
+    background-size: 150%;
+    background-position: 10% 65%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 15s infinite alternate linear;
+}
+
+@keyframes animate-background {
+    from {background-position: 0% 65%;}
+    to {background-position: 100% 65%;}
+}
+
+#dunedin-railway {
+    object-fit: contain;
+    max-width: 100vw;
+    max-height: 600px;
+    object-position: left;
+}
+
+main {
+    display: flex; 
+    flex-direction:row;
+    font-family: Roboto Condensed;
+    color: #0a0600d6;
+    /* background-color: brown; */
+}            
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-family: Roboto Condensed;
+    /* background-color: blue; */
+    width: 10%;
+    font-size: 2em;
+    padding: 0.5em;
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+
+a:hover {
+    color:#d98404d6
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    /* background-color: blue; */
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+    padding-top: 2em;
+}
+
+.two-em-text, .whisky-intro-text {
+    font-size: 1.5em;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    flex-wrap: wrap;
+    /* background-color: blueviolet; */
+}
+
+.equipment-section {
+    display: flex;
+    flex-direction: row;   
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* background-color: aqua; */
+    flex-wrap: nowrap;
+    height: 100%;
+    margin: 10px;
+} 
+
+#shaker-content, #muddler-content, #jiggers-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-basis: 33% 100%;
+    transition-duration: 2s;
+    flex-grow: 1;
+}
+
+.equipment-items:hover {
+        flex-basis: 100%;
+        background-color: #f08b0729;
+    }
+
+.equipment-section img, .equipment-section p {
+    height: 100%;
+    width: 50%;
+    /* background-color: orange; */
+}
+
+
+.whisky-cocktails {
+    display: flex;
+    flex-direction: column;
+    /* background-color: brown; */
+    width: 100%;
+}
+
+.whisky-intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10%;
+    width: 10%;
+    height: 200px;
+}
+
+.whisky-intro-image {
+    object-fit: cover;
+    width: 85vw;
+    position: relative;
+    opacity: 0.15;
+}
+
+.whisky-intro-text {
+    padding: 1em;
+    position: absolute;
+    margin-right: 5%;
+    /* color: white; */
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.whisky-sour, .old-fashioned {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.whisky-sour-image {
+    object-fit: contain;
+    height: 85%;
+    width: 50%;
+    position: relative;
+}
+
+.whisky-sour-text {
+    position: absolute;
+    top: 5%;
+    color: rgb(221, 131, 14);
+    height: 80%;
+    width: 18%;
+    font-size: 3em;
+}
+
+.whisky-sour-list {
+    position: absolute;
+    top: 20%;
+    color: rgb(221, 131, 14);
+    height: 60%;
+    width: 18%;
+    font-size: 1.5em;
+    margin-left: 1.8em;
+}
+
+.whisky-sour-image:hover {
+    opacity: 0.4;
+}
+
+.old-fashioned-image {
+    object-fit: contain;
+    height: 70%;
+    width: 50%;
+    position: relative;
+}
+
+.old-fashioned-text {
+    position: absolute;
+    top: 1%;
+    color: rgb(221, 131, 14);
+    height: 40%;
+    width: 18%;
+    font-size: 3em;
+}
+
+.old-fashioned-list {
+    position: absolute;
+    top: 10%;
+    color: rgb(221, 131, 14);
+    height: 40%;
+    width: 18%;
+    font-size: 1.5em;
+    margin-left: 1.8em;
+}
+
+.old-fashioned-image:hover {
+    opacity: 0.2;
+}
+
+
+.email {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(221, 201, 139, 0.509);
+}
+
+textarea {
+    width: 42.5%;
+    height: 10em;
+    object-position: 0%;
+}
+
+textarea::placeholder {
+    text-align: 0%;
+}
+
+
+#shaker-content, #muddler-content, #jiggers-content {
+    display: flex;
+    flex-direction: row;
+    width: 32%;
+    padding: 1%;
+    box-shadow: 10px 9px 58px -8px rgba(219, 135, 0, 0.228);
+    justify-content: flex-start;
+}
+
+
+
+.shaker-image, .muddler-image, .jiggers-image{
+    object-fit: contain;
+    margin: 1%;
+    /* background-color: orange; */
+}
+
+.shaker-words, .muddler-words, .jiggers-words {
+    object-fit: contain;
+    margin: 1%;
+    /* background-color: blueviolet; */
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: Roboto Condensed;
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+.fb-social {
+    color: rgb(50, 142, 241);
+    padding-left: 10px;
+}
+
+.linkedin-social {
+    padding-left: 10px;
+}
