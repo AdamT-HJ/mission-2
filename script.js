@@ -10,7 +10,7 @@ const diceFaces = ["I", "II", "III", "IV", "V", "VI"];
 
 function displayDice (){
     let roll = (Math.floor(Math.random()*6)+1);
-    for (face of diceFaces) {
+    // for (face of diceFaces) {
         if(roll === 1) {
             return(diceFaces[0]);
         } else if (roll === 2) {
@@ -25,8 +25,8 @@ function displayDice (){
             return(diceFaces[5]);
         } else
             return("Error");
-    };   
-}  
+};   
+
 //Note need to adjust this so that it doesnt result math.random giving a value of '0' which gives me an error.
 //could also change array to array of images for dice. but think back ground image with roman numerals over top will be easier.
 //could shorten this to display = indice of roll.
