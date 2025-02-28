@@ -2,7 +2,9 @@ console.log("connected")
 
 //Variables
 
-const diceFaces = ["I", "II", "III", "IV", "V", "VI"];
+//Dice Faces
+const diceFaces = ["I", "II", "III", "V", "V", "X"];
+
 //user roll all dice button
 
 const user1 = document.getElementById("userd1");
@@ -186,3 +188,30 @@ userButtArrayAll7.forEach((item => {
 // });
 
 
+//score counter 
+// in JS counter for score translate to element on page as per roll counters.
+//need to change dice faces 
+
+let oreoScore = 0
+
+//Value converter
+
+// same event listener for user buttons or oreo buttons, then call score function on each press, using if else.
+
+// function check dice array index against dice face index and assign value for running total?
+
+
+function oreoScoreRunningTotal (dice) {
+    if (dice.textContent === "I") {return(oreoScore += 1)}
+     else if (dice.textContent === "II"){return(oreoScore += 2)}
+     else if (dice.textContent === "III"){return(oreoScore += 3)}
+     else if (dice.textContent === "V"){return(oreoScore += 5)}
+     else {return oreoScore += 10}  
+};
+
+console.log(oreoScoreRunningTotal(oreo1));
+
+console.log(oreo1.textContent);
+console.log(oreoScore);
+
+// now find way to apply function to check each players dice everytime there's a roll.
