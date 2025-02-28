@@ -4,7 +4,7 @@ console.log("connected")
 
 const diceFaces = ["I", "II", "III", "IV", "V", "VI"];
 //user roll all dice button
-const userButtAll = document.getElementById("userButtAll");
+
 const user1 = document.getElementById("userd1");
 const user2 = document.getElementById("userd2");
 const user3 = document.getElementById("userd3");
@@ -14,7 +14,7 @@ const user6 = document.getElementById("userd6");
 const userDiceArray = [user1, user2, user3, user4, user5, user6];
 
 //Oreo roll all dice button
-const oreoButtAll = document.getElementById("oreoButtAll");
+
 const oreo1 = document.getElementById("oreod1");
 const oreo2 = document.getElementById("oreod2");
 const oreo3 = document.getElementById("oreod3");
@@ -32,6 +32,10 @@ console.log(allDiceArray);
 //user buttons
 const anyIndividualDiceButton = document.querySelectorAll(".diceButt")
 console.log(anyIndividualDiceButton)
+
+//user roll all button
+const userButtAll = document.getElementById("userButtAll");
+
 const userButt1 = document.getElementById("userButt1") 
 const userButt2 = document.getElementById("userButt2") 
 const userButt3 = document.getElementById("userButt3") 
@@ -39,8 +43,12 @@ const userButt4 = document.getElementById("userButt4")
 const userButt5 = document.getElementById("userButt5") 
 const userButt6 = document.getElementById("userButt6")
 
-//array for user buttons
-const userButtArray = [userButt1, userButt2, userButt3, userButt4, userButt5, userButt6];
+
+
+
+
+//oreo roll all button
+const oreoButtAll = document.getElementById("oreoButtAll");
 
 const oreoButt1 = document.getElementById("oreoButt1") 
 const oreoButt2 = document.getElementById("oreoButt2") 
@@ -49,15 +57,38 @@ const oreoButt4 = document.getElementById("oreoButt4")
 const oreoButt5 = document.getElementById("oreoButt5") 
 const oreoButt6 = document.getElementById("oreoButt6") 
 
+
+//array of all individual buttons for Oreo and user
 const allButtArray = [userButt1, userButt2, userButt3, userButt4, userButt5, userButt6, oreoButt1, oreoButt2, oreoButt3, oreoButt4, oreoButt5, oreoButt6]
 
-//variable for both roll al dice buttons
+//variable for the two both roll al dice buttons
 const bothRollAllDiceButtons = [userButtAll, oreoButtAll];
+
+//array of individual dice roll oreo buttons & oreo roll all button
+const oreoButtArrayAll7 = [oreoButt1, oreoButt2, oreoButt3, oreoButt4, oreoButt5, oreoButt6, oreoButtAll];
+
+//array of individual dice roll user buttons & user roll all button
+const userButtArrayAll7 = [userButt1, userButt2, userButt3, userButt4, userButt5, userButt6, userButtAll];
+
+
+
 //User & Oreo Counters
 let userCount = document.getElementById("userCount")
 let oreoCount = document.getElementById("oreoCount")
 
+//variables for ALL userdicebuttons & ALL oredicebuttons (using their class)
+const oreoDiceButton = document.querySelectorAll(".oreoDiceButton")
+console.log(oreoDiceButton);
 
+const userDiceButton = document.querySelectorAll(".userDiceButton")
+console.log(userDiceButton);
+
+//array of ALL of user and oreo buttons
+const everyonesButtons = [oreoDiceButton, userDiceButton];
+
+//Un-nested array of ALL user and oreo Buttons
+const everyonesButtonsUnNested = [userButt1, userButt2, userButt3, userButt4, userButt5, userButt6, userButtAll, oreoButt1, oreoButt2, oreoButt3, oreoButt4, oreoButt5, oreoButt6, oreoButtAll];
+console.log(everyonesButtonsUnNested);
 
 
 //Functions
@@ -117,17 +148,41 @@ let jsOreoCount = 0;
 
 //the replace str with value part of this isnt working try figuring it out with clg above
 //Counters
-bothRollAllDiceButtons.forEach((item => {
+// bothRollAllDiceButtons.forEach((item => {
+//     item.addEventListener("click", function (event) {
+//         if (event.target === userButtAll) {
+//             (jsUserCount +=6); (userCount.textContent = jsUserCount);
+//         } else {(jsOreoCount += 6); (oreoCount.textContent = jsOreoCount);} 
+//     })
+// }));
+
+//Counter for Oreo Dice
+oreoButtArrayAll7.forEach((item => {
     item.addEventListener("click", function (event) {
-        if (event.target === userButtAll) {
-            (jsUserCount +=6); (userCount.textContent = jsUserCount);
-        } else {(jsOreoCount += 6); (oreoCount.textContent = jsOreoCount);} 
-    })
-}));
+        for (let i = 0; i<=6; i++){ 
+        if (event.target === oreoButtArrayAll7[i]) {
+            (jsOreoCount +=1); (oreoCount.textContent = jsOreoCount)}}}
+    )}));
+
+//Counter for User Dice
+userButtArrayAll7.forEach((item => {
+    item.addEventListener("click", function (event) {
+        for (let i = 0; i<=6; i++){ 
+        if (event.target === userButtArrayAll7[i]) {
+            (jsUserCount +=1); (userCount.textContent = jsUserCount)}}}
+    )}));
+
+
+// } else if (event.target === everyonesButtonsUnNested[i]) {(jsOreoCount += 1); (oreoCount.textContent = jsOreoCount);}}
 
 // console.log(parseInt(oreoCount.textContent) +=1);
 //game = each die is 1 X, 2 V's, 3 I's.
 // X = 10, V = 5, I = 1
 // The maximum possible score is 60, so lets say you have to get as close to 30 as possible without going over.
 //rolls are put into an array as numbers and summed up = score
+
+// everyonesButtons.forEach(playersButtons => {
+//     playersButtons.forEach(button => {console.log(button)});
+// });
+
 
