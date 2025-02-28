@@ -27,7 +27,9 @@ const oreoDiceArray = [oreo1, oreo2, oreo3, oreo4, oreo5, oreo6];
 //Dice Faces
 const allDiceArray = [...userDiceArray, ...oreoDiceArray]
 console.log(allDiceArray);
+
 //Dice Buttons
+//user buttons
 const anyIndividualDiceButton = document.querySelectorAll(".diceButt")
 console.log(anyIndividualDiceButton)
 const userButt1 = document.getElementById("userButt1") 
@@ -36,6 +38,9 @@ const userButt3 = document.getElementById("userButt3")
 const userButt4 = document.getElementById("userButt4") 
 const userButt5 = document.getElementById("userButt5") 
 const userButt6 = document.getElementById("userButt6")
+
+//array for user buttons
+const userButtArray = [userButt1, userButt2, userButt3, userButt4, userButt5, userButt6];
 
 const oreoButt1 = document.getElementById("oreoButt1") 
 const oreoButt2 = document.getElementById("oreoButt2") 
@@ -105,7 +110,9 @@ anyIndividualDiceButton.forEach((item) => {
 })
 });
 
-console.log(parseInt(oreoCount.textContent) +=1);
+
+let jsUserCount = 0;
+let jsOreoCount = 0;
 
 
 //the replace str with value part of this isnt working try figuring it out with clg above
@@ -113,8 +120,14 @@ console.log(parseInt(oreoCount.textContent) +=1);
 bothRollAllDiceButtons.forEach((item => {
     item.addEventListener("click", function (event) {
         if (event.target === userButtAll) {
-            userCount.textContent = (parseInt(userCount.textContent))+=6
-        } else {oreoCount.textContent = (parseInt(oreoCount.textContent)) += 6} 
+            (jsUserCount +=6); (userCount.textContent = jsUserCount);
+        } else {(jsOreoCount += 6); (oreoCount.textContent = jsOreoCount);} 
     })
 }));
+
+// console.log(parseInt(oreoCount.textContent) +=1);
+//game = each die is 1 X, 2 V's, 3 I's.
+// X = 10, V = 5, I = 1
+// The maximum possible score is 60, so lets say you have to get as close to 30 as possible without going over.
+//rolls are put into an array as numbers and summed up = score
 
