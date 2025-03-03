@@ -93,10 +93,16 @@ console.log(everyonesButtonsUnNested);
 let messageBox = document.getElementById("messageBox");
 
 //User 'Roll Your Dice' Section
+//whole section
 const userRollSection = document.getElementById("userRollPrompt")
+//Roll Count Text to change color when rolls = 4 and display message
+const userRollCount4Message = document.getElementById("userRollCountWhiteText")
 
 //Oreo 'Roll Your Dice' Section
 const oreoRollSection = document.getElementById("oreoRollPrompt")
+//Roll Count Text to change color when rolls = 4 and display message
+const oreoRollCount4Message = document.getElementById("oreoRollCountWhiteText")
+
 
 //Functions
 //function to roll dice and give roman numeral result for display using dicefaces array
@@ -171,7 +177,7 @@ oreoButtArrayAll7.forEach((item => {
         if (event.target === oreoButtArrayAll7[i]) {
             (jsOreoCount +=1); (oreoCount.textContent = jsOreoCount)}}
         if (jsOreoCount === 4) {
-            oreoRollSection.style.backgroundColor = "black"
+            oreoRollCount4Message.style.color = "black"
             oreoButtAll.style.display = "none"
             oreoButt1.style.display = "none"
             oreoButt2.style.display = "none"
@@ -195,15 +201,16 @@ userButtArrayAll7.forEach((item => {
         if (event.target === userButtArrayAll7[i]) {
             (jsUserCount +=1); (userCount.textContent = jsUserCount)}}
         if (jsUserCount === 4) {
-            userRollSection.style.backgroundColor = "black"
+            userRollCount4Message.style.color = "black"
             userButtAll.style.display = "none"
             userButt1.style.display = "none"
             userButt2.style.display = "none"
             userButt3.style.display = "none"
             userButt4.style.display = "none"
             userButt5.style.display = "none"
-            userButt6.style.display = "none"
+            userButt6.style.display = "none"  
         }
+        
             // userModal.style.display = "block"}
         //     userModalMessageBox2.textContent = "That's all your rolls, hold them dice partner."}
         // else if (jsUserCount >4) {
@@ -297,7 +304,7 @@ function oreoScoreReset () {
     };
 
 
-oreoButtArrayAll7.forEach((item => {
+oreoButtArrayAll7.forEach(item => {
     item.addEventListener("click", function (event) {
         for (let i = 0; i<=6; i++){ 
             if (event.target === oreoButtArrayAll7[i]) {   
@@ -307,10 +314,17 @@ oreoButtArrayAll7.forEach((item => {
             oreoScoreReset()
             oreoScoreJsUpdate()
             oreoScoreUpdateHtmlFunction()
-            if (oreoScoreTotal >= 30)
+            if (oreoScoreTotal >= 30){
                 oreoModal.style.display = "block"
                 oreoModalMessageBox1.textContent = `${oreoScoreTotal} You're Bust. Get out`
-            ; }}})}));
+                oreoButtAll.style.display = "none"
+                oreoButt1.style.display = "none"
+                oreoButt2.style.display = "none"
+                oreoButt3.style.display = "none"
+                oreoButt4.style.display = "none"
+                oreoButt5.style.display = "none"
+                oreoButt6.style.display = "none"
+            ; }}}})})
 
 console.log(oreoScoreTotal);
 
@@ -379,6 +393,7 @@ function userScoreUpdateHtmlFunction () {
 // oreoScoreUpdateHtmlFunction();
 //need function to set total to 0 each time as well at the start
 //messagebox 2 content to empty "" as this message box is for roll count, dont want conflicting messages
+// elements in an array are not DOM objects so had to change each button individually as for loop to cycle through them did not work.
 function userScoreReset () {
         userScoreTotal = 0
     };
@@ -396,11 +411,19 @@ userButtArrayAll7.forEach((item => {
             if (userScoreTotal >= 30){
                 userModal.style.display = "block"
                 userModalMessageBox1.textContent = `${userScoreTotal} You're Bust. Get out`
+                userButtAll.style.display = "none"
+                userButt1.style.display = "none"
+                userButt2.style.display = "none"
+                userButt3.style.display = "none"
+                userButt4.style.display = "none"
+                userButt5.style.display = "none"
+                userButt6.style.display = "none"
             ; }}}})}));
 
+            
 console.log(userScoreTotal);
 console.log(jsUserCount);
-console.log(userCount.textContent);
+console.log(userScore.textContent);
 
 //next modals for pop up messages
 
