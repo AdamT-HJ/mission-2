@@ -92,6 +92,9 @@ const everyonesButtons = [oreoDiceButton, userDiceButton];
 const everyonesButtonsUnNested = [userButt1, userButt2, userButt3, userButt4, userButt5, userButt6, userButtAll, oreoButt1, oreoButt2, oreoButt3, oreoButt4, oreoButt5, oreoButt6, oreoButtAll];
 console.log(everyonesButtonsUnNested);
 
+//Message box for feedback to players <p>"messageBox"
+let messageBox = document.getElementById("messageBox");
+
 
 //Functions
 //function to roll dice and give roman numeral result for display using dicefaces array
@@ -189,10 +192,14 @@ userButtArrayAll7.forEach((item => {
 
 
 //score counter 
-// in JS counter for score translate to element on page as per roll counters.
+// in JS counter for score translate to element on page as per roll counters. Have counters for each oreo score in an array, sum array.
 //need to change dice faces 
 
-let oreoScore = 0
+//variables to store an array of converted scores for each of oreos dice. Then variable to sum them for a total/
+let oreoScoreArray = [];
+let oreoScoreTotal = 0;
+
+console.log(oreoScoreTotal);
 
 //Value converter
 
@@ -200,18 +207,81 @@ let oreoScore = 0
 
 // function check dice array index against dice face index and assign value for running total?
 
-
+//function to check a single dice score and return it to a running total array
 function oreoScoreRunningTotal (dice) {
-    if (dice.textContent === "I") {return(oreoScore += 1)}
-     else if (dice.textContent === "II"){return(oreoScore += 2)}
-     else if (dice.textContent === "III"){return(oreoScore += 3)}
-     else if (dice.textContent === "V"){return(oreoScore += 5)}
-     else {return oreoScore += 10}  
+    if (dice.textContent === "I") {return(oreoScoreArray.push (1))}
+     else if (dice.textContent === "II"){return(oreoScoreArray.push (2))}
+     else if (dice.textContent === "III"){return(oreoScoreArray.push (3))}
+     else if (dice.textContent === "V"){return(oreoScoreArray.push (5))}
+     else if (dice.textContent === "X"){return (oreoScoreArray.push (10))}  
 };
 
-console.log(oreoScoreRunningTotal(oreo1));
 
 console.log(oreo1.textContent);
-console.log(oreoScore);
+console.log(oreoScoreArray);
 
-// now find way to apply function to check each players dice everytime there's a roll.
+
+//loop to apply dice score function to all dice and return it to score array. the 'diceArray parameter is for the user or Oreo Dice array.
+function diceScoreToAll () {
+for (let i = 0; i < oreoDiceArray.length; i++ )
+    oreoScoreRunningTotal(oreoDiceArray[i]);
+};
+
+//undefined since console.log does not explicitly return something, it has the side effect of printing to the console.
+// console.log(diceScoreToAll(oreoDiceArray));
+
+// console.log(oreoDiceArray);
+// console.log(oreoScoreArray);
+
+//for loop to total oreo score array length and store it in variable oreoScoreTotal - need this to run on each dice button click so score will update - make it a function
+ function oreoScoreJsUpdate () {
+    for (let i = 0; i < oreoScoreArray.length; i++) {
+    oreoScoreTotal += oreoScoreArray[i];
+    };
+}
+
+oreoScoreJsUpdate();
+console.log(oreoScoreTotal);
+
+//linking JS variable for oreoScoreTotal to html
+let oreoScore = document.getElementById("oreoScore");
+
+//function to update HTML oreo score with value in JS score.
+function oreoScoreUpdateHtmlFunction () {
+    return (oreoScore.textContent = oreoScoreTotal);
+};
+
+// event listener for click of any oreo buttons, to update score.
+// oreoScoreUpdateHtmlFunction();
+//need function to set total to 0 each time as well at the start
+function oreoScoreReset () {
+        oreoScoreTotal = 0
+    };
+
+
+oreoButtArrayAll7.forEach((item => {
+    item.addEventListener("click", function (event) {
+        for (let i = 0; i<=6; i++){ 
+            if (event.target === oreoButtArrayAll7[i]) {   
+            oreoScoreReset()
+            oreoScoreArray = [];
+            diceScoreToAll() 
+            oreoScoreReset()
+            oreoScoreJsUpdate()
+            oreoScoreUpdateHtmlFunction()
+            if (oreoScoreTotal >= 30){messageBox.textContent = `${oreoScoreTotal} You're Bust. Get out`}
+            ; }}})}));
+
+console.log(oreoScoreTotal);
+
+;
+
+//Now I have to do it for the user because my code is dogs%^t
+
+
+
+//Next prompt on load to give names for player1 and player 2, if not default to player1 & player 2
+
+
+
+
