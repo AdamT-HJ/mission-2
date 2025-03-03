@@ -46,9 +46,6 @@ const userButt5 = document.getElementById("userButt5")
 const userButt6 = document.getElementById("userButt6")
 
 
-
-
-
 //oreo roll all button
 const oreoButtAll = document.getElementById("oreoButtAll");
 
@@ -95,6 +92,11 @@ console.log(everyonesButtonsUnNested);
 //Message box for feedback to players <p>"messageBox"
 let messageBox = document.getElementById("messageBox");
 
+//User 'Roll Your Dice' Section
+const userRollSection = document.getElementById("userRollPrompt")
+
+//Oreo 'Roll Your Dice' Section
+const oreoRollSection = document.getElementById("oreoRollPrompt")
 
 //Functions
 //function to roll dice and give roman numeral result for display using dicefaces array
@@ -162,19 +164,52 @@ let jsOreoCount = 0;
 // }));
 
 //Counter for Oreo Dice
+//clearing text content for box 1s as they show messages relating to score, want to avoid conflicting messages
 oreoButtArrayAll7.forEach((item => {
     item.addEventListener("click", function (event) {
         for (let i = 0; i<=6; i++){ 
         if (event.target === oreoButtArrayAll7[i]) {
-            (jsOreoCount +=1); (oreoCount.textContent = jsOreoCount)}}}
+            (jsOreoCount +=1); (oreoCount.textContent = jsOreoCount)}}
+        if (jsOreoCount === 4) {
+            oreoRollSection.style.backgroundColor = "black"
+            oreoButtAll.style.display = "none"
+            oreoButt1.style.display = "none"
+            oreoButt2.style.display = "none"
+            oreoButt3.style.display = "none"
+            oreoButt4.style.display = "none"
+            oreoButt5.style.display = "none"
+            oreoButt6.style.display = "none"
+        }
+            // oreoModal.style.display = "block"}
+        // else if (jsOreoCount >4) {
+        //     oreoModal.style.display = "block"
+        //     oreoModalMessageBox2.textContent = "I told you 4's the limit. You're bust, now get out!"}
+        }
     )}));
 
 //Counter for User Dice
+//make background black and disappear button to stop rolling at 4 count, couldnt do modal as conflicting messages with score modal. elements in an array are not DOM objects so had to change each button individually as for loop to cycle through them did not work.
 userButtArrayAll7.forEach((item => {
     item.addEventListener("click", function (event) {
         for (let i = 0; i<=6; i++){ 
         if (event.target === userButtArrayAll7[i]) {
-            (jsUserCount +=1); (userCount.textContent = jsUserCount)}}}
+            (jsUserCount +=1); (userCount.textContent = jsUserCount)}}
+        if (jsUserCount === 4) {
+            userRollSection.style.backgroundColor = "black"
+            userButtAll.style.display = "none"
+            userButt1.style.display = "none"
+            userButt2.style.display = "none"
+            userButt3.style.display = "none"
+            userButt4.style.display = "none"
+            userButt5.style.display = "none"
+            userButt6.style.display = "none"
+        }
+            // userModal.style.display = "block"}
+        //     userModalMessageBox2.textContent = "That's all your rolls, hold them dice partner."}
+        // else if (jsUserCount >4) {
+        //     userModal.style.display = "block"
+        //     userModalMessageBox2.textContent = "I told you 4's the limit. You're bust, now get out!"} 
+        }
     )}));
 
 
@@ -195,6 +230,8 @@ userButtArrayAll7.forEach((item => {
 // in JS counter for score translate to element on page as per roll counters. Have counters for each oreo score in an array, sum array.
 //need to change dice faces 
 
+
+// OREO SCORE COUNTER SECTION
 //variables to store an array of converted scores for each of oreos dice. Then variable to sum them for a total/
 let oreoScoreArray = [];
 let oreoScoreTotal = 0;
@@ -254,6 +291,7 @@ function oreoScoreUpdateHtmlFunction () {
 // event listener for click of any oreo buttons, to update score.
 // oreoScoreUpdateHtmlFunction();
 //need function to set total to 0 each time as well at the start
+//messagebox 2 content to empty "" as this message box is for roll count, dont want conflicting messages
 function oreoScoreReset () {
         oreoScoreTotal = 0
     };
@@ -269,7 +307,9 @@ oreoButtArrayAll7.forEach((item => {
             oreoScoreReset()
             oreoScoreJsUpdate()
             oreoScoreUpdateHtmlFunction()
-            if (oreoScoreTotal >= 30){messageBox.textContent = `${oreoScoreTotal} You're Bust. Get out`}
+            if (oreoScoreTotal >= 30)
+                oreoModal.style.display = "block"
+                oreoModalMessageBox1.textContent = `${oreoScoreTotal} You're Bust. Get out`
             ; }}})}));
 
 console.log(oreoScoreTotal);
@@ -278,10 +318,132 @@ console.log(oreoScoreTotal);
 
 //Now I have to do it for the user because my code is dogs%^t
 
+// OREO SCORE COUNTER SECTION
+//variables to store an array of converted scores for each of oreos dice. Then variable to sum them for a total/
+let userScoreArray = [];
+let userScoreTotal = 0;
 
+console.log(userScoreTotal);
+
+//Value converter
+
+// same event listener for user buttons or oreo buttons, then call score function on each press, using if else.
+
+// function check dice array index against dice face index and assign value for running total?
+
+//function to check a single dice score and return it to a running total array
+function userScoreRunningTotal (dice) {
+    if (dice.textContent === "I") {return(userScoreArray.push (1))}
+     else if (dice.textContent === "II"){return(userScoreArray.push (2))}
+     else if (dice.textContent === "III"){return(userScoreArray.push (3))}
+     else if (dice.textContent === "V"){return(userScoreArray.push (5))}
+     else if (dice.textContent === "X"){return (userScoreArray.push (10))}  
+};
+
+
+console.log(user1.textContent);
+console.log(userScoreArray);
+
+
+//loop to apply dice score function to all dice and return it to score array. the 'diceArray parameter is for the user or Oreo Dice array.
+function userDiceScoreToAll () {
+for (let i = 0; i < userDiceArray.length; i++ )
+    userScoreRunningTotal(userDiceArray[i]);
+};
+
+//undefined since console.log does not explicitly return something, it has the side effect of printing to the console.
+// console.log(diceScoreToAll(oreoDiceArray));
+
+// console.log(oreoDiceArray);
+// console.log(oreoScoreArray);
+
+//for loop to total oreo score array length and store it in variable oreoScoreTotal - need this to run on each dice button click so score will update - make it a function
+ function userScoreJsUpdate () {
+    for (let i = 0; i < userScoreArray.length; i++) {
+    userScoreTotal += userScoreArray[i];
+    };
+}
+
+userScoreJsUpdate();
+console.log(userScoreTotal);
+
+//linking JS variable for oreoScoreTotal to html
+let userScore = document.getElementById("userScore");
+
+//function to update HTML oreo score with value in JS score.
+function userScoreUpdateHtmlFunction () {
+    return (userScore.textContent = userScoreTotal);
+};
+
+// event listener for click of any user buttons, to update score.
+// oreoScoreUpdateHtmlFunction();
+//need function to set total to 0 each time as well at the start
+//messagebox 2 content to empty "" as this message box is for roll count, dont want conflicting messages
+function userScoreReset () {
+        userScoreTotal = 0
+    };
+
+
+userButtArrayAll7.forEach((item => {
+    item.addEventListener("click", function (event) {
+        for (let i = 0; i<=6; i++){ 
+            if (event.target === userButtArrayAll7[i]) {   
+            userScoreArray = [];
+            userDiceScoreToAll() 
+            userScoreReset()
+            userScoreJsUpdate()
+            userScoreUpdateHtmlFunction()
+            if (userScoreTotal >= 30){
+                userModal.style.display = "block"
+                userModalMessageBox1.textContent = `${userScoreTotal} You're Bust. Get out`
+            ; }}}})}));
+
+console.log(userScoreTotal);
+console.log(jsUserCount);
+console.log(userCount.textContent);
+
+//next modals for pop up messages
+
+//User Modal Variables
+// message box 1 is used for score, message box 2 is used for number of rolls.
+//To avoid conflicting messages there are 2 modals, one for user messages and one for oreo messages
+//Originally had modal messages for both score and number of rolls. However since the score/rolls happen entirely within seperate blocks of code I could not avoid conflicting messages due to scope/the order of code in my JS. Instead now remove roll button and change background color to display white text message when reached 4 rolls.
+const userModal = document.getElementById("messageModal1");
+const userCloseSpan = document.getElementById("closeUserModal");
+const userModalMessageBox1 = document.getElementById("modalMessageBoxUser1")
+const userModalMessageBox2 = document.getElementById("modalMessageBoxUserBox2")
+
+//Oreo Modals Variables
+const oreoModal = document.getElementById("messageModal2");
+const oreoCloseSpan = document.getElementById("closeOreoModal");
+const oreoModalMessageBox1 = document.getElementById("modalMessageBoxOreo1")
+const oreoModalMessageBox2 = document.getElementById("modalMessageBoxOreo2")
+
+
+
+userCloseSpan.onclick = function(){
+    userModal.style.display = "none";
+}
+
+oreoCloseSpan.onclick = function(){
+    oreoModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if(event.target == userModal) {
+        userModal.style.display = "none";
+    }
+};
+
+window.onclick = function(event) {
+    if(event.target == oreoModal) {
+        oreoModal.style.display = "none";
+    }
+};
 
 //Next prompt on load to give names for player1 and player 2, if not default to player1 & player 2
 
+//Check winner: 
+//problem is, score check and roll check occur specifically in 2 different functions, not sure I can write an IF statement to compare these.
 
-
-
+// use event listener triggered when both background colors are black to check and compare scores and display a message?

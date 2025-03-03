@@ -36,6 +36,7 @@
             <button id="userButtAll" class="userDiceButton">Roll all dice</button>
             <p>No. of Rolls: <span id="userCount">0</span> </p>
             <p>Score: <span id="userScore">0</span></p>
+            <p id="userRollCountWhiteText">That's all your rolls, 4s the limit</p>
         </section>
 
         <section id="oreoRollPrompt">
@@ -43,6 +44,7 @@
             <button id="oreoButtAll" class="oreoDiceButton">Roll all dice</button>
             <p>No. of Oreo's Rolls: <span id="oreoCount">0</span> </p>
             <p>Score: <span id="oreoScore">0</span></p>
+            <p id="oreoRollCountWhiteText">That's all your rolls, 4s the limit</p>
         </section>
 
     </section>
@@ -118,13 +120,43 @@
 
     </section>
 
-    <section id="commsBox">
+    <!-- This Section now defunct, replaced with Modal -->
+    <!-- <section id="commsBox">
         
         <p id="messageBox">text box</p>
         <img id= userCounterImage src="/images/side-oreo.jpg" alt="Oreo regarding you">
-    </section>      
+    </section>       -->
 
+    <!-- comms modal1 for 'user' -->
+    <section>
+        <div id="messageModal1" class="modal">     
     
+            <!-- Modal content -->
+            <div class="modalContent">
+                <span class="close" id="closeUserModal">&times;</span>
+                <p id="modalMessageBoxUser1"></p>
+                <p id="modalMessageBoxUser2"></p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- comms modal2 for 'oreo' -->
+    <section>
+        <div id="messageModal2" class="modal">     
+    
+            <!-- Modal content -->
+            <div class="modalContent">
+                <span class="close" id="closeOreoModal">&times;</span>
+                <p id="modalMessageBoxOreo1"></p>
+                <p id="modalMessageBoxOreo2"></p>
+            </div>
+
+        </div>
+
+    </section>
+
 </body>
 
 
