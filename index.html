@@ -19,20 +19,43 @@
     <header>Oreo Dice</header>
 
 
-    <section id="welcome">
-        <h1>Welcome to my Casino</h1>
-    </section>
+    <!-- <section id="welcome">
+        <h1>Welcome to my Game</h1>
+    </section> -->
 
 
     <section id="intro">
-        <img id="welcomeImage" src="/images/casino-oreo.jpg" alt="image of fantastic Oreo The Cat"/>
-        <p id="welcomeText">Welcome to my casino, explanation of game</p>
+        <img id="welcomeImage" src="/casino-oreo-edited.png" alt="image of fantastic Oreo The Cat"/>
+            <section id="welcomeTextBox">
+                <p id="welcomeText" > 
+                    <h2 id="welcomeTitle">Welcome to my Game</h2>
+                    <p id="rulesExplained">
+                    Greetings <br/> 
+                    I am Oreo and this is my game: <br/>
+                    - Players must roll the dice 4 times <br/>
+                    - Each time, roll all dice, or an individual die <br/>
+                    - Try to score as close to 35 as possible <br/>
+                    - Player with the highest score WINS<br/> - BUT... <br/>
+                    - If you go over 35 it's 'BUST' and you lose buddy <br/>
+                    <br/>
+                    <br/>
+                    Also <br/>
+                    Someone has to roll for me <br/>
+                    I have no hands and I do not understand the concept of Dice <br/>
+                    <br/>
+                    - Dice values are: <br/>
+                    X = 10 (odds 1 in 6) <br/>
+                    V = 5 (odds 2 in 6) <br/>
+                    I = 1 (odds 3 in 6)
+                    </p>
+                </p>
+            </section>
     </section>
 
     <section id="allRollPrompt">
         
         <section id="userRollPrompt">
-            <h2>Roll your Dice</h2>
+            <h2 class="rollPromptText">Roll your Dice</h2>
             <button id="userButtAll" class="userDiceButton">Roll all dice</button>
             <p>No. of Rolls: <span id="userCount">0</span> </p>
             <p id="userRollCountWhiteText">That's all your rolls, 4s the limit</p>
@@ -45,7 +68,7 @@
         </section>
 
         <section id="oreoRollPrompt">
-            <h2>Roll Oreo's Dice</h2>
+            <h2 class="rollPromptText">Roll Oreo's Dice</h2>
             <button id="oreoButtAll" class="oreoDiceButton">Roll all dice</button>
             <p>No. of Oreo's Rolls: <span id="oreoCount">0</span> </p>
             <p id="oreoRollCountWhiteText">That's all your rolls, 4s the limit</p>

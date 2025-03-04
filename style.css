@@ -4,22 +4,64 @@
     
 }
 
-
+#welcome, #welcomeText, #allRollPrompt, #userdbox, #oreodbox {
+    font-family: "Kranky", serif;
+    -webkit-box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
+    background-image: url(/images/new-background.png);
+    
+}
 
 header {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 2rem 2rem 2rem 1rem;
+    font-family: "Kranky", serif;
+    -webkit-box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
+    background-image: url(/images/new-background.png);
+    font-size: 5rem;
+    
 }
-
-#welcome {
+/* Decided This section was unnecessary */
+/* #welcome {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin: 2rem 1rem 2rem 1rem; 
-    background-color:aquamarine
-    
+    margin: 1rem 2rem 2rem 2rem; 
+    background-color:aquamarine;
+    width: 50%;
+    font-size: 2rem;
+} */
+
+#welcomeTextBox {
+    -webkit-box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
+    background-image: url(/images/new-background.png);
+    height: 60%;
+}
+
+#welcomeTextBox {
+    font-family: "Kranky", serif;
+    margin: 2.5rem 2rem 2rem 1rem;
+}
+
+#welcomeTitle {
+    font-size: 2.5rem;
+}
+
+
+#welcomeText {
+    display: flex;
+    flex-direction: column;
+}
+
+#rulesExplained {
+    font-size: 2rem;
 }
 
 #intro {
@@ -28,36 +70,60 @@ header {
     justify-content: flex-start;
     flex-wrap: nowrap;
     width: 98%;
-    max-height: 500px;
-    background-color: aqua;
-    margin: 2rem 1rem 2rem 1rem;
+    /* max-height: 1000px; */
+    /* background-color: aqua; */
+    margin: 2rem 2rem 2rem 1rem;
+    
 }
 
-    #welcomeImage {
-       object-fit: contain;
-       width: 30%; 
-    }
+#welcomeImage {
+    object-fit: contain;
+    width: 30%;
+    height: 100%;
+    z-index: -1;
+    /* border-radius: 70px 70px 70px 70px;
+    -moz-border-radius: 70px 70px 70px 70px;
+    -webkit-border-radius: 70px 70px 70px 70px;
+    border: 0px solid #000000;
+    margin: 2rem 3rem 2rem 1rem; 
+    -webkit-box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4); */
+}
+
 
 /* flexbox for both roll counters & all roll dice buttons */
 #allRollPrompt {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 3rem 2rem 2rem 1rem;
     width: 98%;
+    z-index: 2;
 }
 
+.rollPromptText {
+    font-size: 4rem;
+}
 
 #userRollPrompt, #oreoRollPrompt, #userRollScores, #oreoRollScores {
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 2rem 2rem 2rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-   
+    background-color: white;
+    border-style: outset;
+    font-size: 2rem;
+    
 }
+
+
 
 #userFinalScore, #oreoFinalScore {
     display: none;
+    font-size: 10rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 
@@ -70,7 +136,7 @@ header {
 #bothDiceBoxes {
     display: flex;
     flex-direction: row;
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 2rem 2rem 2rem 1rem;
     width: 98%;
 }
 
@@ -81,9 +147,10 @@ header {
     grid-template-rows: 1fr 1fr;
     column-gap: 10px;
     row-gap: 10px;
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 2rem 2rem 2rem 1rem;
     width: 48vw;
 }
+
 
 .ubox, .obox {
     display: flex;
@@ -96,8 +163,8 @@ header {
     border-radius: 40px 40px 40px 40px;
     -moz-border-radius: 40px 40px 40px 40px;
     -webkit-border-radius: 40px 40px 40px 40px;
-    background-color: #46a365;
-    border: 3px solid #6ac687;
+    background-color: #1135d5b8;
+    border: 3px solid #1f13c375;
     height: 130px;
     width: 140px;
     font-size: 7rem;
@@ -125,9 +192,33 @@ header {
 
 
 /* Style for user dice buttons */
-.userButt {
+.diceButt,.userDiceButton, .oreoDiceButton {
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+    background-color:#ededed;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:#777777;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+    }
 
-}
+.diceButt:hover, .userDiceButton:hover, .oreoDiceButton:hover {
+        background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+        background-color:#dfdfdf;
+    }
+
+.diceButt:active, .userDiceButton:hover, .oreoDiceButton:hover {
+        position:relative;
+        top:1px;
+    }
+
 
 
 
@@ -138,7 +229,7 @@ header {
     width: 98%;
     max-height: 500px;
     background-color: aqua;
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 2rem 2rem 2rem 1rem;
 }   
 
 #userCounterImage, #oreoCounterImage {
@@ -158,15 +249,21 @@ header {
    height: 100%;
    overflow: auto;
    background-color: rgba(0, 255, 255, 0.674);
-}
+   background-image: url(/images/your-bust.jpeg);
+   
+ }
 
 .modalContent {
     background-color: chocolate;
-    margin: 15% auto;
+    background-image: url(/images/bust-image.jpeg);
+    margin: 5% ;
     padding: 20px;
     border: 1px solid black;
-    width: 80%;
-    height: 60%;
+    width: 30%;
+    height: 42%;
+    font-size: 5rem;
+    color: white;
+    font-weight: bold;
 }
 
 /* close button */
