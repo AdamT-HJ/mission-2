@@ -118,22 +118,6 @@ function displayDice (){
     
     console.log(displayDice());
 
-// dont actually need any of this you idiot
-//         if(roll === 1) {
-//             return(diceFaces[0]);
-//         } else if (roll === 2) {
-//             return(diceFaces[1]);
-//         } else if (roll === 3) {
-//             return(diceFaces[2]); 
-//         } else if (roll === 4) {
-//             return(diceFaces[3]); 
-//         } else if (roll === 5) {
-//             return(diceFaces[4]); 
-//         } else if (roll === 6) {
-//             return(diceFaces[5]);
-//         } else
-//             return("Error");
-// };   
 
 //for roll all user dice button
 userButtAll.addEventListener("click", function () {
@@ -162,16 +146,7 @@ anyIndividualDiceButton.forEach((item) => {
 let jsUserCount = 0;
 let jsOreoCount = 0;
 
-
-//the replace str with value part of this isnt working try figuring it out with clg above
 //Counters
-// bothRollAllDiceButtons.forEach((item => {
-//     item.addEventListener("click", function (event) {
-//         if (event.target === userButtAll) {
-//             (jsUserCount +=6); (userCount.textContent = jsUserCount);
-//         } else {(jsOreoCount += 6); (oreoCount.textContent = jsOreoCount);} 
-//     })
-// }));
 
 //Counter for Oreo Dice
 //clearing text content for box 1s as they show messages relating to score, want to avoid conflicting messages
@@ -189,38 +164,8 @@ oreoButtArrayAll7.forEach((item => {
             oreoButt4.style.display = "none"
             oreoButt5.style.display = "none"
             oreoButt6.style.display = "none"
-            oreoFinalScore.style.display = "block"
-
-            //This way lies madness....
-            // if (userRollCount4Message.style.display === "block" && oreoRollCount4Message.style.display === "block" ) {
-            //     //logic works BECAUSE of the order in which it checks
-            //     // user bust - oreo always wins
-            //     if (userFinalScore.textContent > 35) {
-            //         console.log("User bust. House wins")
-            //     }
-            //     // oreo bust - user wins
-            //     else if (oreoFinalScore.textContent > 35) {
-            //         console.log("oreo bust user wins")
-            //     }
-            //     //user high score - user wins
-            //     else if (userFinalScore.textContent > oreoFinalScore.textContent) {
-            //         console.log("user wins")
-            //     } 
-            //     //oreo high score - oreo wins
-            //     else if (oreoFinalScore.textContent > userFinalScore.textContent >35) {
-            //         console.log("oreo wins")
-            //     }
-                   
-            //     console.log(userFinalScore.textContent, oreoFinalScore.textContent, typeof userFinalScore.textContent, typeof );
-            // }
-
-
+            oreoFinalScore.style.display = "block"          
         }
-                    
-            // oreoModal.style.display = "block"}
-        // else if (jsOreoCount >4) {
-        //     oreoModal.style.display = "block"
-        //     oreoModalMessageBox2.textContent = "I told you 4's the limit. You're bust, now get out!"}
         }
     )}));
 
@@ -240,69 +185,11 @@ userButtArrayAll7.forEach((item => {
             userButt4.style.display = "none"
             userButt5.style.display = "none"
             userButt6.style.display = "none"
-            // console.log(userFinalScoreArray)
-            // userFinalScore.textContent = userFinalScoreArray[4]
             userFinalScore.style.display = "block"  
         
-            //Despair and avert your eyes traveller
-            // if (userRollCount4Message.style.display === "block" && oreoRollCount4Message.style.display === "block" ) {
-            //     //logic works BECAUSE of the order in which it checks
-            //     // user bust - oreo always wins
-            //     if (userFinalScore.textContent > 35) {
-            //         console.log("User bust. House wins")
-            //     }
-            //     // oreo bust - user wins
-            //     else if (oreoFinalScore.textContent > 35) {
-            //         console.log("oreo bust user wins")
-            //     }
-            //     //user high score - user wins
-            //     else if (userFinalScore.textContent > oreoFinalScore.textContent) {
-            //         console.log("user wins")
-            //     } 
-            //     //oreo high score - oreo wins
-            //     else if (oreoFinalScore.textContent > userFinalScore.textContent >35) {
-            //         console.log("oreo wins")
-            //     }
-                   
-            //     console.log(userFinalScore.textContent, oreoFinalScore.textContent);
-            // }
-        
-        
-        }
-
-        
-
-        // if (jsUserCount === 5){
-        //     console.log(userFinalScoreArray)
-        //     userFinalScore.textContent = userFinalScoreArray[4]
-        //     console.log(userFinalScore.textContent)
-        // }
-        
-            // userModal.style.display = "block"}
-        //     userModalMessageBox2.textContent = "That's all your rolls, hold them dice partner."}
-        // else if (jsUserCount >4) {
-        //     userModal.style.display = "block"
-        //     userModalMessageBox2.textContent = "I told you 4's the limit. You're bust, now get out!"} 
+        }       
         }
     )}));
-
-
-// } else if (event.target === everyonesButtonsUnNested[i]) {(jsOreoCount += 1); (oreoCount.textContent = jsOreoCount);}}
-
-// console.log(parseInt(oreoCount.textContent) +=1);
-//game = each die is 1 X, 2 V's, 3 I's.
-// X = 10, V = 5, I = 1
-// The maximum possible score is 60, so lets say you have to get as close to 30 as possible without going over.
-//rolls are put into an array as numbers and summed up = score
-
-// everyonesButtons.forEach(playersButtons => {
-//     playersButtons.forEach(button => {console.log(button)});
-// });
-
-
-//score counter 
-// in JS counter for score translate to element on page as per roll counters. Have counters for each oreo score in an array, sum array.
-//need to change dice faces 
 
 
 // OREO SCORE COUNTER SECTION
@@ -366,8 +253,6 @@ function oreoScoreUpdateHtmlFunction () {
 };
 
 // event listener for click of any oreo buttons, to update score.
-// oreoScoreUpdateHtmlFunction();
-//need function to set total to 0 each time as well at the start
 //messagebox 2 content to empty "" as this message box is for roll count, dont want conflicting messages
 function oreoScoreReset () {
         oreoScoreTotal = 0
@@ -403,8 +288,6 @@ console.log(oreoScoreTotal);
 
 ;
 
-//Now I have to do it for the user because my code is dogs%^t
-
 // User SCORE COUNTER SECTION
 //variables to store an array of converted scores for each of oreos dice. Then variable to sum them for a total/
 let userScoreArray = [];
@@ -416,11 +299,6 @@ let userFinalScoreArray = [];
 console.log(userScoreTotal);
 
 //Value converter
-
-// same event listener for user buttons or oreo buttons, then call score function on each press, using if else.
-
-// function check dice array index against dice face index and assign value for running total?
-
 //function to check a single dice score and return it to a running total array
 function userScoreRunningTotal (dice) {
     if (dice.textContent === "I") {return(userScoreArray.push (1))}
@@ -443,9 +321,6 @@ for (let i = 0; i < userDiceArray.length; i++ )
 
 //undefined since console.log does not explicitly return something, it has the side effect of printing to the console.
 // console.log(diceScoreToAll(oreoDiceArray));
-
-// console.log(oreoDiceArray);
-// console.log(oreoScoreArray);
 
 //for loop to total oreo score array length and store it in variable oreoScoreTotal - need this to run on each dice button click so score will update - make it a function
  function userScoreJsUpdate () {
@@ -558,9 +433,3 @@ window.onclick = function(event) {
     }
 };
 
-//Next prompt on load to give names for player1 and player 2, if not default to player1 & player 2
-
-//Check winner: 
-//problem is, score check and roll check occur specifically in 2 different functions, not sure I can write an IF statement to compare these.
-
-// use event listener triggered when both background colors are black to check and compare scores and display a message?

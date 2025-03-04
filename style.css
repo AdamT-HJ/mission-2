@@ -26,16 +26,6 @@ header {
     font-size: 5rem;
     
 }
-/* Decided This section was unnecessary */
-/* #welcome {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin: 1rem 2rem 2rem 2rem; 
-    background-color:aquamarine;
-    width: 50%;
-    font-size: 2rem;
-} */
 
 #welcomeTextBox {
     -webkit-box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
@@ -81,14 +71,6 @@ header {
     width: 30%;
     height: 100%;
     z-index: -1;
-    /* border-radius: 70px 70px 70px 70px;
-    -moz-border-radius: 70px 70px 70px 70px;
-    -webkit-border-radius: 70px 70px 70px 70px;
-    border: 0px solid #000000;
-    margin: 2rem 3rem 2rem 1rem; 
-    -webkit-box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
-    -moz-box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4);
-    box-shadow: 15px 12px 5px 0px rgba(0,0,0,0.4); */
 }
 
 
@@ -116,7 +98,6 @@ header {
     font-size: 2rem;
     
 }
-
 
 
 #userFinalScore, #oreoFinalScore {
