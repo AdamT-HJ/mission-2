@@ -42,13 +42,13 @@ header {
 #allRollPrompt {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 2rem 1rem 2rem 1rem;
     width: 98%;
 }
 
 
-#userRollPrompt, #oreoRollPrompt {
+#userRollPrompt, #oreoRollPrompt, #userRollScores, #oreoRollScores {
     margin: 2rem 1rem 2rem 1rem;
     display: flex;
     flex-direction: column;
@@ -56,13 +56,15 @@ header {
    
 }
 
-#oreoRollCountWhiteText {
-    color:  white;
+#userFinalScore, #oreoFinalScore {
+    display: none;
 }
 
-#userRollCountWhiteText{
-    color: white;
+
+#oreoRollCountWhiteText, #userRollCountWhiteText{
+    display: none;
 }
+
 
 /* flexbox to hold both dice boxes */
 #bothDiceBoxes {
